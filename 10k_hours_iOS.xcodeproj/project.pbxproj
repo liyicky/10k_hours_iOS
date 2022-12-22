@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C0D18572953E94700BC6713 /* _0k_hours_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D18562953E94700BC6713 /* _0k_hours_iOSApp.swift */; };
+		5C0D18572953E94700BC6713 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D18562953E94700BC6713 /* AppMain.swift */; };
 		5C0D18592953E94700BC6713 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D18582953E94700BC6713 /* ContentView.swift */; };
 		5C0D185B2953E94800BC6713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C0D185A2953E94800BC6713 /* Assets.xcassets */; };
 		5C0D185E2953E94800BC6713 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C0D185D2953E94800BC6713 /* Preview Assets.xcassets */; };
@@ -15,7 +15,7 @@
 
 /* Begin PBXFileReference section */
 		5C0D18532953E94700BC6713 /* 10k_hours_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 10k_hours_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C0D18562953E94700BC6713 /* _0k_hours_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0k_hours_iOSApp.swift; sourceTree = "<group>"; };
+		5C0D18562953E94700BC6713 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		5C0D18582953E94700BC6713 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5C0D185A2953E94800BC6713 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C0D185D2953E94800BC6713 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		5C0D18552953E94700BC6713 /* 10k_hours_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				5C0D18562953E94700BC6713 /* _0k_hours_iOSApp.swift */,
+				5C0D18562953E94700BC6713 /* AppMain.swift */,
 				5C0D18582953E94700BC6713 /* ContentView.swift */,
 				5C0D185A2953E94800BC6713 /* Assets.xcassets */,
 				5C0D185C2953E94800BC6713 /* Preview Content */,
@@ -138,7 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C0D18592953E94700BC6713 /* ContentView.swift in Sources */,
-				5C0D18572953E94700BC6713 /* _0k_hours_iOSApp.swift in Sources */,
+				5C0D18572953E94700BC6713 /* AppMain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
