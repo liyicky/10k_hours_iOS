@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct AppMain: App {
+    
+    let store = CoreStore(initial: CoreState(), reducer: coreReducer)
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CoreView()
+                .environmentObject(store)
+                .onAppear{ store.dispatch(.startApp) }
         }
     }
 }
