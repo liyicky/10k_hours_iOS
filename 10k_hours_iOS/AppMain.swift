@@ -16,7 +16,10 @@ struct AppMain: App {
         WindowGroup {
             CoreView()
                 .environmentObject(store)
-                .onAppear{ store.dispatch(.startApp) }
+                .onAppear{
+                    store.dispatch(.startApp)
+                    store.dispatch(.fetchPosts)
+                }
         }
     }
 }

@@ -20,6 +20,7 @@
 		5C0D18762954014300BC6713 /* DataModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D18742954014300BC6713 /* DataModels.xcdatamodeld */; };
 		5C0D18782954035200BC6713 /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D18772954035200BC6713 /* NewPostView.swift */; };
 		5C0D187B2954041400BC6713 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D187A2954041400BC6713 /* Post.swift */; };
+		5C0D187D2954174A00BC6713 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D187C2954174A00BC6713 /* PostView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		5C0D18752954014300BC6713 /* DataModels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModels.xcdatamodel; sourceTree = "<group>"; };
 		5C0D18772954035200BC6713 /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
 		5C0D187A2954041400BC6713 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		5C0D187C2954174A00BC6713 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +71,11 @@
 		5C0D18552953E94700BC6713 /* 10k_hours_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				5C0D18562953E94700BC6713 /* AppMain.swift */,
 				5C0D1879295403B300BC6713 /* Models */,
 				5C0D186D2953EDA400BC6713 /* Views */,
 				5C0D18642953EB9B00BC6713 /* State */,
 				5C0D18732954011200BC6713 /* Data */,
-				5C0D18562953E94700BC6713 /* AppMain.swift */,
 				5C0D185A2953E94800BC6713 /* Assets.xcassets */,
 				5C0D185C2953E94800BC6713 /* Preview Content */,
 			);
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				5C0D18772954035200BC6713 /* NewPostView.swift */,
+				5C0D187C2954174A00BC6713 /* PostView.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				5C0D1872295400C800BC6713 /* DataController.swift in Sources */,
 				5C0D18662953EBCA00BC6713 /* State.swift in Sources */,
 				5C0D18682953EBD200BC6713 /* Store.swift in Sources */,
+				5C0D187D2954174A00BC6713 /* PostView.swift in Sources */,
 				5C0D18782954035200BC6713 /* NewPostView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

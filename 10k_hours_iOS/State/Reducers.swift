@@ -30,6 +30,9 @@ let coreReducer: Reducer<CoreState, CoreAction> = { state, action in
         DataController.instance.save()
         mutatingState.posts = DataController.instance.fetchPosts()
         mutatingState.newPost = Post.defaultPost
+        
+    case .fetchPosts:
+        mutatingState.posts = DataController.instance.fetchPosts()
     }
     
     return mutatingState

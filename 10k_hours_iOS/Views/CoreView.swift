@@ -42,9 +42,9 @@ extension CoreView {
     }
     
     private var content: some View {
-        Text("Content")
-            .font(.title)
-            .padding()
+        ForEach(store.state.posts, id: \.self) { post in
+            PostView(post: post)
+        }
     }
     
     private var addPostButton: some View {
