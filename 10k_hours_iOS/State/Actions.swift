@@ -9,4 +9,5 @@ import Foundation
 
 enum CoreAction {
     case startApp
+    case addPost
 }

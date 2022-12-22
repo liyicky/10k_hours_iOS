@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct CoreView: View {
+    
+    @EnvironmentObject var store: CoreStore
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack {
-                // Header view
-                header
-                // Main content
-                content
+        ZStack(alignment: .bottom) {
+            ScrollView(showsIndicators: false) {
+                VStack {
+                    // Header view
+                    header
+                    // Main content
+                    content
+                }
             }
+            
+            addPostButton
         }
-        .ignoresSafeArea()
-
+        .sheet(isPresented: $store.state.postSheetOpen, content: {
+            NewPostView()
+        })
     }
 }
 
@@ -36,6 +45,17 @@ extension CoreView {
         Text("Content")
             .font(.title)
             .padding()
+    }
+    
+    private var addPostButton: some View {
+        Button {
+            store.state.postSheetOpen.toggle()
+        } label: {
+            Label("Add Post", systemImage: "photo")
+                .padding()
+                .border(.black)
+        }
+
     }
 }
 
