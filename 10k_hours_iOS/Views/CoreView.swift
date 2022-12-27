@@ -13,6 +13,78 @@ struct CoreView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
+        VStack {
+            switch store.state.appState {
+            case .onboard: onboarding
+            case .core: core
+            }
+            
+            Button {
+                store.dispatch(.resetApp)
+            } label: {
+                Text("Reset App")
+            }
+
+        }
+    }
+}
+
+// MARK: - VIEWS
+extension CoreView {
+    // Onboarding Views -------------------------------------------------------------------------------------------
+    private var onboarding: some View {
+        VStack {
+            switch store.state.onboardingState {
+            case .first:
+                onboardingFirstStep
+            case .second:
+                onboardingSecondStep
+            case .third:
+                onboardingThirdStep
+            }
+        }
+    }
+    
+    private var onboardingFirstStep: some View {
+        VStack {
+            Text("Onboarding now...")
+            onboardingNextBtn
+        }
+    }
+    
+    private var onboardingSecondStep: some View {
+        VStack {
+            NewProjectsView()
+            
+            Button {
+                store.dispatch(.addProject)
+                store.dispatch(.stepOnboarding)
+            } label: {
+                Text("Create Project")
+            }
+            .shadow(color: .black.opacity(0.3), radius: 1)
+        }
+    }
+    
+    private var onboardingThirdStep: some View {
+        VStack {
+            Text("third")
+            onboardingNextBtn
+        }
+    }
+    
+    private var onboardingNextBtn: some View {
+        Button {
+            store.dispatch(.stepOnboarding)
+        } label: {
+            Label("Next", systemImage: "photo")
+                .padding()
+                .border(.black)
+        }
+    }
+    
+    // Core Views -------------------------------------------------------------------------------------------------
+    private var core: some View {
         ZStack(alignment: .bottom) {
             ScrollView(showsIndicators: false) {
                 VStack {
@@ -29,10 +101,6 @@ struct CoreView: View {
             NewPostView()
         })
     }
-}
-
-// MARK: - VIEWS
-extension CoreView {
     private var header: some View {
         Text("Stats")
             .font(.largeTitle)

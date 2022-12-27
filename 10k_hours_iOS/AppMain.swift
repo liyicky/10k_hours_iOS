@@ -18,7 +18,6 @@ struct AppMain: App {
                 .environmentObject(store)
                 .onAppear{
                     store.dispatch(.startApp)
-                    store.dispatch(.fetchPosts)
                 }
         }
     }

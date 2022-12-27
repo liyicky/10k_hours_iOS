@@ -9,6 +9,9 @@ import Foundation
 
 enum CoreAction {
     case startApp
+    case addProject
     case addPost
     case fetchPosts
+    case stepOnboarding
+    case resetApp
 }

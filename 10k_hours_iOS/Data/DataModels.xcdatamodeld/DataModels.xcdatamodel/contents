@@ -8,12 +8,11 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="project" maxCount="1" deletionRule="Nullify" destinationEntity="ProjectEntity" inverseName="posts" inverseEntity="ProjectEntity"/>
     </entity>
     <entity name="ProjectEntity" representedClassName="ProjectEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="avatar" optional="YES" attributeType="Binary"/>
-        <attribute name="banner" optional="YES" attributeType="Binary"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PostEntity"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PostEntity" inverseName="project" inverseEntity="PostEntity"/>
     </entity>
 </model>

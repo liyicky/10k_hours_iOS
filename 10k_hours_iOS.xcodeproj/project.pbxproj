@@ -21,6 +21,8 @@
 		5C0D18782954035200BC6713 /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D18772954035200BC6713 /* NewPostView.swift */; };
 		5C0D187B2954041400BC6713 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D187A2954041400BC6713 /* Post.swift */; };
 		5C0D187D2954174A00BC6713 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D187C2954174A00BC6713 /* PostView.swift */; };
+		5C0D1880295A7B3500BC6713 /* NewProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D187F295A7B3500BC6713 /* NewProjectsView.swift */; };
+		5C0D1882295A7C9C00BC6713 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D1881295A7C9C00BC6713 /* Project.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		5C0D18772954035200BC6713 /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
 		5C0D187A2954041400BC6713 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		5C0D187C2954174A00BC6713 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		5C0D187F295A7B3500BC6713 /* NewProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectsView.swift; sourceTree = "<group>"; };
+		5C0D1881295A7C9C00BC6713 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 		5C0D186D2953EDA400BC6713 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5C0D187E295A7B1F00BC6713 /* Projects */,
 				5C0D18702953FDFE00BC6713 /* Posts */,
 				5C0D18582953E94700BC6713 /* CoreView.swift */,
 				5C0D186E2953F7B000BC6713 /* TestView.swift */,
@@ -133,8 +138,17 @@
 			isa = PBXGroup;
 			children = (
 				5C0D187A2954041400BC6713 /* Post.swift */,
+				5C0D1881295A7C9C00BC6713 /* Project.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5C0D187E295A7B1F00BC6713 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				5C0D187F295A7B3500BC6713 /* NewProjectsView.swift */,
+			);
+			path = Projects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,11 +226,13 @@
 				5C0D18762954014300BC6713 /* DataModels.xcdatamodeld in Sources */,
 				5C0D18592953E94700BC6713 /* CoreView.swift in Sources */,
 				5C0D186A2953EBE000BC6713 /* Reducers.swift in Sources */,
+				5C0D1882295A7C9C00BC6713 /* Project.swift in Sources */,
 				5C0D18572953E94700BC6713 /* AppMain.swift in Sources */,
 				5C0D186C2953EBE800BC6713 /* Actions.swift in Sources */,
 				5C0D1872295400C800BC6713 /* DataController.swift in Sources */,
 				5C0D18662953EBCA00BC6713 /* State.swift in Sources */,
 				5C0D18682953EBD200BC6713 /* Store.swift in Sources */,
+				5C0D1880295A7B3500BC6713 /* NewProjectsView.swift in Sources */,
 				5C0D187D2954174A00BC6713 /* PostView.swift in Sources */,
 				5C0D18782954035200BC6713 /* NewPostView.swift in Sources */,
 			);

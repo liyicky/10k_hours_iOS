@@ -18,6 +18,14 @@ struct NewPostView: View {
     }
 }
 
+// MARK: - PRIVIEW
+struct NewPostView_Previews: PreviewProvider {
+    static var previews: some View {
+        NewPostView()
+    }
+}
+
+// MARK: - VIEWS
 extension NewPostView {
     private var form: some View {
         Form {
@@ -86,11 +94,5 @@ extension NewPostView {
                 }
             }
         }
-    }
-}
-
-struct NewPostView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewPostView()
     }
 }
