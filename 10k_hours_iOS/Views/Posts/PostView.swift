@@ -10,13 +10,13 @@ import CoreData
 
 struct PostView: View {
     
-    let post: PostEntity
+    let post: Post
     
     var body: some View {
 
         VStack {
             HStack {
-                Image(uiImage: UIImage(data: post.image!)!)
+                Image(uiImage: UIImage(data: post.binaryImageData!)!)
                     .resizable()
                     .scaledToFit()
                     .clipShape(
@@ -26,18 +26,18 @@ struct PostView: View {
                     .shadow(radius: 5)
                 Spacer()
                 VStack {
-                    Text(post.title ?? "No title")
+                    Text(post.title)
                         .font(.title)
                     Divider()
-                    Text(post.date!.formatted())
+                    Text(post.date.formatted())
                 }
             }
             
             
-            Text(post.content ?? "Blank")
+            Text(post.content)
             HStack {
-                Text("$" + String(post.dollars))
-                Text(String(post.hours) + " hours")
+                Text("$" + post.dollarsInvested)
+                Text(post.hoursInvested + " hours")
             }
             
         }
@@ -47,24 +47,24 @@ struct PostView: View {
     }
 }
 
-struct PostView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        let post = PostEntity(context: previewContext)
-        post.title = "Test Title"
-        post.dollars = 100
-        post.hours = 2
-        post.date = Date.now
-        post.content = "Look, just because I don’t be givin’ no man a foot massage don’t make it right for Marsellus to throw Antwone into a glass motherfuckin’ house, fuckin’ up the way the nigger talks. Motherfucker do that shit to me, he better paralyze my ass, ’cause I’ll kill the motherfucker, know what I’m sayin’?"
-        if let image = UIImage(named: "test_image") {
-            post.image = image.pngData()
-        }
-        return PostView(post: post)
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .environment(\.managedObjectContext, previewContext)
-    }
-    
-    static var previewContext: NSManagedObjectContext = {
-            return NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        }()
-}
+//struct PostView_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//        let post = PostEntity(context: previewContext)
+//        post.title = "Test Title"
+//        post.dollars = 100
+//        post.hours = 2
+//        post.date = Date.now
+//        post.content = "Look, just because I don’t be givin’ no man a foot massage don’t make it right for Marsellus to throw Antwone into a glass motherfuckin’ house, fuckin’ up the way the nigger talks. Motherfucker do that shit to me, he better paralyze my ass, ’cause I’ll kill the motherfucker, know what I’m sayin’?"
+//        if let image = UIImage(named: "test_image") {
+//            post.image = image.pngData()
+//        }
+//        return PostView(post: post)
+//            .previewLayout(PreviewLayout.sizeThatFits)
+//            .environment(\.managedObjectContext, previewContext)
+//    }
+//
+//    static var previewContext: NSManagedObjectContext = {
+//            return NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+//        }()
+//}

@@ -8,7 +8,19 @@
 import Foundation
 
 struct Project {
+    var id: UUID
     var name: String
+    var dataCreated: Date
     
-    static let defaultProject = Project(name: "")
+    static let defaultProject = Project(id: UUID(), name: "", dataCreated: Date.now)
+    
+    static func fetchAll() -> [Project] {
+        var results = [Project]()
+        let allProjectEntities = DataController.instance.fetchProjects()
+        for entity in allProjectEntities {
+            let newResult = Project(id: entity.id!, name: entity.name!, dataCreated: entity.dateCreated!)
+            results.append(newResult)
+        }
+        return results
+    }
 }

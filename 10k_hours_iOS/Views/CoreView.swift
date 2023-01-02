@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct CoreView: View {
     
     @EnvironmentObject var store: CoreStore
@@ -26,12 +27,14 @@ struct CoreView: View {
             }
 
         }
+        .background(.white)
+        .environment(\.colorScheme, .light)
     }
 }
 
 // MARK: - VIEWS
+// Onboarding Views -------------------------------------------------------------------------------------------
 extension CoreView {
-    // Onboarding Views -------------------------------------------------------------------------------------------
     private var onboarding: some View {
         VStack {
             switch store.state.onboardingState {
@@ -82,8 +85,9 @@ extension CoreView {
                 .border(.black)
         }
     }
-    
-    // Core Views -------------------------------------------------------------------------------------------------
+}
+// Core Views -------------------------------------------------------------------------------------------------
+extension CoreView {
     private var core: some View {
         ZStack(alignment: .bottom) {
             ScrollView(showsIndicators: false) {
@@ -102,11 +106,7 @@ extension CoreView {
         })
     }
     private var header: some View {
-        Text("Stats")
-            .font(.largeTitle)
-            .frame(width: UIScreen.main.bounds.width, height: 300)
-            .background(Color.red)
-            .shadow(radius: 5, x: 0, y: 5)
+        StatsView()
     }
     
     private var content: some View {
