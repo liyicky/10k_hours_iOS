@@ -11,72 +11,71 @@ import Charts
 struct StatsView: View {
     
     @EnvironmentObject var store: CoreStore
+    @Binding var progress: CGFloat
+    
+    static public let MinHeight: CGFloat = 120
+    static public let MaxHeight: CGFloat = 300 - MinHeight
+    
     
     var body: some View {
-        PagingView(pageCount: 3, currentPage: $store.state.currentStatsPage) {
-            cellOne
-            cellTwo
-            cellThree
-        }
-        .frame(height: Constants.statViewHeight)
-        
-        Spacer()
-        
-        HStack {
-            ForEach(0..<3) { index in
-                Circle()
-                    .fill(index == store.state.currentStatsPage ? Color.blue : Color.gray)
-                    .frame(width: 10, height: 10)
+        VStack {
+            TabView {
+                cellOne
+                cellTwo
+                cellThree
             }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+            .frame(height: StatsView.MinHeight + (1 - progress) * StatsView.MaxHeight)
+            .offset(y: StatsView.MinHeight * progress)
         }
     }
 }
-//
-//struct StatsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        StatsView()
-//    }
-//}
 
 // MARK: - VIEWS
 extension StatsView {
+    
     private var cellOne: some View {
-        VStack(alignment: .leading) {
-            Text("Stats")
-            Text(store.state.currentProject!.dateCreated!.formatted())
-            Text("Progress Reports: \(store.state.postAmount)")
-            Text("Time Spent: \(store.state.hoursSpent)")
-            Text("Dollars Spent: \(store.state.dollarsSpent)")
-            Text("Dollars per Hour: \(store.state.dollarsPerHour)")
+        FadingStatsViewCell(progress: $progress) {
+            VStack(alignment: .leading) {
+                Text("Stats")
+                Text(store.state.currentProject!.dateCreated!.formatted())
+                Text("Progress Reports: \(store.state.postAmount)")
+                Text("Time Spent: \(store.state.hoursSpent)")
+                Text("Dollars Spent: \(store.state.dollarsSpent)")
+                Text("Dollars per Hour: \(store.state.dollarsPerHour)")
+            }
+        } shrunk: {
+            HStack() {
+                Text("Stats")
+            }
         }
-        .modifier(StatsViewCell(color: Color.green))
     }
     
     private var cellTwo: some View {
-        Chart {
-            ForEach(store.state.posts) { post in
-                BarMark(
-                    x: .value("Date", post.simpleDate),
-                    y: .value("Hours", post.simpleHours)
-                )
-                .foregroundStyle(by: .value("Post", post.title))
+
+        ScalingStatsViewCell(progress: $progress) {
+            Chart {
+                ForEach(store.state.posts) { post in
+                    BarMark(
+                        x: .value("Date", post.simpleDate),
+                        y: .value("Hours", post.simpleHours)
+                    )
+                }
             }
         }
-        .padding()
-        .modifier(StatsViewCell(color: Color.white))
     }
     
     private var cellThree: some View {
-        Chart {
-            ForEach(store.state.posts) { post in
-                BarMark(
-                    x: .value("Date", post.simpleDate),
-                    y: .value("Dollars", post.simpleDollars)
-                )
-                .foregroundStyle(by: .value("Post", post.title))
+        ScalingStatsViewCell(progress: $progress) {
+            Chart {
+                ForEach(store.state.posts) { post in
+                    BarMark(
+                        x: .value("Date", post.simpleDate),
+                        y: .value("Dollars", post.simpleDollars)
+                    )
+//                    .foregroundStyle(by: .value("Post", post.title))
+                }
             }
         }
-        .padding()
-        .modifier(StatsViewCell(color: Color.white))
     }
 }

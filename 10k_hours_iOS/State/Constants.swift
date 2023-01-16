@@ -8,5 +8,5 @@
 import Foundation
 
 struct Constants {
-    static let statViewHeight: CGFloat = 300
+
 }

@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import ScalingHeaderScrollView
+import Introspect
 
 
 struct CoreView: View {
     
     @EnvironmentObject var store: CoreStore
     @Environment(\.dismiss) var dismiss
+    @State var headerProgress: CGFloat = 0
     
     var body: some View {
         VStack {
@@ -90,14 +93,12 @@ extension CoreView {
 extension CoreView {
     private var core: some View {
         ZStack(alignment: .bottom) {
-            ScrollView(showsIndicators: false) {
-                VStack {
-                    // Header view
-                    header
-                    // Main content
-                    content
-                }
+            ScalingHeaderScrollView {
+                header()
+            } content: {
+                content
             }
+            .collapseProgress($headerProgress)
             
             addPostButton
         }
@@ -105,8 +106,9 @@ extension CoreView {
             NewPostView()
         })
     }
-    private var header: some View {
-        StatsView()
+    
+    private func header() -> some View {
+        StatsView(progress: $headerProgress)
     }
     
     private var content: some View {

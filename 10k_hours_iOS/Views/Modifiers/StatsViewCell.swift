@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct StatsViewCell: ViewModifier {
-    let color: Color
-    
     func body(content: Content) -> some View {
         content
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .frame(height: Constants.statViewHeight)
-            .background(color)
-        
+            .foregroundColor(Color.white)
+            .background(Color.gray)
+            .cornerRadius(8)
+            .shadow(color: Color.black.opacity(0.7), radius: 5)
+            .padding()
     }
 }

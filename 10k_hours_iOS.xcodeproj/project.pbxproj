@@ -28,6 +28,9 @@
 		5C0D188B295ABB6500BC6713 /* StatsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D188A295ABB6500BC6713 /* StatsViewCell.swift */; };
 		5C0D188E295AC3C600BC6713 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D188D295AC3C600BC6713 /* Constants.swift */; };
 		5C0D1899295ADFF700BC6713 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D1898295ADFF700BC6713 /* HelperFunctions.swift */; };
+		5C6300CB2974EE61002B6BDD /* FadingStatsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6300CA2974EE61002B6BDD /* FadingStatsViewCell.swift */; };
+		5C6300CD29752622002B6BDD /* ScalingStatsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6300CC29752622002B6BDD /* ScalingStatsViewCell.swift */; };
+		5C7BC9FC2962AC2100500211 /* ScalingHeaderScrollView in Frameworks */ = {isa = PBXBuildFile; productRef = 5C7BC9FB2962AC2100500211 /* ScalingHeaderScrollView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,8 @@
 		5C0D188A295ABB6500BC6713 /* StatsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewCell.swift; sourceTree = "<group>"; };
 		5C0D188D295AC3C600BC6713 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5C0D1898295ADFF700BC6713 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		5C6300CA2974EE61002B6BDD /* FadingStatsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadingStatsViewCell.swift; sourceTree = "<group>"; };
+		5C6300CC29752622002B6BDD /* ScalingStatsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalingStatsViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C7BC9FC2962AC2100500211 /* ScalingHeaderScrollView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				5C0D1884295A898500BC6713 /* StatsView.swift */,
+				5C6300CA2974EE61002B6BDD /* FadingStatsViewCell.swift */,
+				5C6300CC29752622002B6BDD /* ScalingStatsViewCell.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -214,6 +222,9 @@
 			dependencies = (
 			);
 			name = 10k_hours_iOS;
+			packageProductDependencies = (
+				5C7BC9FB2962AC2100500211 /* ScalingHeaderScrollView */,
+			);
 			productName = 10k_hours_iOS;
 			productReference = 5C0D18532953E94700BC6713 /* 10k_hours_iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -242,6 +253,9 @@
 				Base,
 			);
 			mainGroup = 5C0D184A2953E94700BC6713;
+			packageReferences = (
+				5C7BC9FA2962AC2100500211 /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */,
+			);
 			productRefGroup = 5C0D18542953E94700BC6713 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -269,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C0D186F2953F7B000BC6713 /* TestView.swift in Sources */,
+				5C6300CD29752622002B6BDD /* ScalingStatsViewCell.swift in Sources */,
 				5C0D187B2954041400BC6713 /* Post.swift in Sources */,
 				5C0D18762954014300BC6713 /* DataModels.xcdatamodeld in Sources */,
 				5C0D18592953E94700BC6713 /* CoreView.swift in Sources */,
@@ -284,6 +299,7 @@
 				5C0D1885295A898500BC6713 /* StatsView.swift in Sources */,
 				5C0D1888295A8B5B00BC6713 /* PagingView.swift in Sources */,
 				5C0D1880295A7B3500BC6713 /* NewProjectsView.swift in Sources */,
+				5C6300CB2974EE61002B6BDD /* FadingStatsViewCell.swift in Sources */,
 				5C0D187D2954174A00BC6713 /* PostView.swift in Sources */,
 				5C0D18782954035200BC6713 /* NewPostView.swift in Sources */,
 				5C0D188E295AC3C600BC6713 /* Constants.swift in Sources */,
@@ -487,6 +503,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5C7BC9FA2962AC2100500211 /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/ScalingHeaderScrollView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5C7BC9FB2962AC2100500211 /* ScalingHeaderScrollView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C7BC9FA2962AC2100500211 /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */;
+			productName = ScalingHeaderScrollView;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5C0D18742954014300BC6713 /* DataModels.xcdatamodeld */ = {
